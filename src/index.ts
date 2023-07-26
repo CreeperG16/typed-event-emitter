@@ -3,6 +3,10 @@ export interface EventTypes {
   //[key: string]: (...args: any[]) => void
 }
 
+// TODO: OnceWrapper for .once() and .prependOnceListener()
+// I just can't figure out how to do the types for this
+//type OnceWrapper<Listener extends (...args: any[]) => void> = ((...args: Parameters<Listener>) => void) & { listener: Listener };
+
 // listener map
 type ListenerMapTypes<Events extends EventTypes> = {
   [Key in keyof Events]: Events[Key][];
